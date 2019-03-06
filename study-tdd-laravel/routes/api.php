@@ -14,6 +14,8 @@ use Illuminate\Http\Request;
 */
 Route::get('customers', function() {});
 Route::post('customers', function() {});
+Route::get('customers/{customer_id}', function() {});
+Route::put('customers/{customer_id}', function() {});
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

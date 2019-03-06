@@ -29,4 +29,26 @@ class ReportTest extends TestCase
         // 先に検証部分を記述
         $response->assertStatus(200);
     }
+
+    /**
+     * @test
+     */
+    public function api_customers_customer_idにGETメソッドでアクセスできる()
+    {
+        // 実行部分を書く
+        $response = $this->get('api/customers/1');
+        // 先に検証部分を記述
+        $response->assertStatus(200);
+    }
+
+    /**
+     * @test
+     */
+    public function api_customers_customer_idにPUTメソッドでアクセスできる()
+    {
+        // 実行部分を書く
+        $response = $this->put('api/customers/1');
+        // 先に検証部分を記述
+        $response->assertStatus(200);
+    }
 }
