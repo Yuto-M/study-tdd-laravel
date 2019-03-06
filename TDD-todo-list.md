@@ -1,0 +1,11 @@
+# TODOリスト
+- api/customersにGETメソッドでアクセスできる
+- api/customersにPOSTメソッドでアクセスできる
+- api/customers/{customer_id}にGETメソッドでアクセスできる
+- api/customers/{customer_id}にPUTメソッドでアクセスできる
+- api/customers/{customer_id}にdeleteメソッドでアクセスできる
+- api/reportsにGETメソッドでアクセスできる
+- api/reportsにPOSTメソッドでアクセスできる
+- api/reports/{report_id}にGETメソッドでアクセスできる
+- api/reports/{report_id}にPUTメソッドでアクセスできる
+- api/reports/{report_id}にDELETEメソッドでアクセスできる
