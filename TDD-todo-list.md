@@ -1,5 +1,5 @@
 # TODOリスト
-- api/customersにGETメソッドでアクセスできる
+- ~~api/customersにGETメソッドでアクセスできる~~
 - api/customersにPOSTメソッドでアクセスできる
 - api/customers/{customer_id}にGETメソッドでアクセスできる
 - api/customers/{customer_id}にPUTメソッドでアクセスできる
