@@ -51,4 +51,70 @@ class ReportTest extends TestCase
         // 先に検証部分を記述
         $response->assertStatus(200);
     }
+
+    /**
+     * @test
+     */
+    public function api_customers_customer_idにdeleteメソッドでアクセスできる()
+    {
+        // 実行部分を書く
+        $response = $this->delete('api/customers/1');
+        // 先に検証部分を記述
+        $response->assertStatus(200);
+    }
+
+    /**
+     * @test
+     */
+    public function api_reportsにGETメソッドでアクセスできる()
+    {
+        // 実行部分を書く
+        $response = $this->get('api/reports');
+        // 先に検証部分を記述
+        $response->assertStatus(200);
+    }
+
+    /**
+     * @test
+     */
+    public function api_reportsにPOSTメソッドでアクセスできる()
+    {
+        // 実行部分を書く
+        $response = $this->post('api/reports');
+        // 先に検証部分を記述
+        $response->assertStatus(200);
+    }
+
+    /**
+     * @test
+     */
+    public function api_reports_report_idにGETメソッドでアクセスできる()
+    {
+        // 実行部分を書く
+        $response = $this->get('api/reports/1');
+        // 先に検証部分を記述
+        $response->assertStatus(200);
+    }
+
+    /**
+     * @test
+     */
+    public function api_reports_report_idにPUTメソッドでアクセスできる()
+    {
+        // 実行部分を書く
+        $response = $this->put('api/reports/1');
+        // 先に検証部分を記述
+        $response->assertStatus(200);
+    }
+
+    /**
+     * @test
+     */
+    public function api_reports_report_idにDELETEメソッドでアクセスできる()
+    {
+        // 実行部分を書く
+        $response = $this->delete('api/reports/1');
+        // 先に検証部分を記述
+        $response->assertStatus(200);
+    }
 }
