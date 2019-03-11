@@ -4,7 +4,10 @@ const gulp = require('gulp');
 class MyRegistry extends DefaultRegistry {
     init() {
         gulp.task('watch:test', done => {
-            gulp.watch('tests/**/*.php', { usePolling: true }, gulp.task(
+            gulp.watch([
+                'tests/**/*.php',
+                'routes/**/*.php'
+            ], { usePolling: true }, gulp.task(
                 'test'
             ));
         });
