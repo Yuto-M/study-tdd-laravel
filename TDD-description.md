@@ -28,6 +28,6 @@
 
 
 ## 参考
-TDD解説  
+TDD解説
 https://dev.classmethod.jp/study_meeting/read/what-tdd/
 https://www.valtes.co.jp/qbookplus/1069
