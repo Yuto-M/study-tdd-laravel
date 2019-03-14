@@ -1,5 +1,8 @@
 # TODOリスト
 - ~~api/customersにGETメソッドでアクセスできる~~
+    - api/customersにGETメソッドでアクセスするとJSONが返却される
+    - api/customersにGETメソッドで取得できる顧客情報のJSON形式は要検通りである
+    - api/customersにGETメソッドで返却される顧客情報は2件である
 - ~~api/customersにPOSTメソッドでアクセスできる~~
 - ~~api/customers/{customer_id}にGETメソッドでアクセスできる~~
 - ~~api/customers/{customer_id}にPUTメソッドでアクセスできる~~
