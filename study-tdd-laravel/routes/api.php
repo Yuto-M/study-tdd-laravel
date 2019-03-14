@@ -13,9 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 Route::get('customers', function() {
-    return response()->json(\App\Customer::query()->get());
+    return response()->json(\App\Customer::query()->select(['id', 'name'])->get());
 });
-Route::post('customers', function() {});
+Route::post('customers', function(Request $request) {
+    $customer = new \App\Customer();
+    $customer->name = $request->json('name');
+    $customer->save();
+});
 Route::get('customers/{customer_id}', function() {});
 Route::put('customers/{customer_id}', function() {});
 Route::delete('customers/{customer_id}', function() {});

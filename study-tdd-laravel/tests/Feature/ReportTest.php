@@ -8,14 +8,15 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ReportTest extends TestCase
 {
-    // use RefreshDatabase;
+    use RefreshDatabase;
 
     public function setUp(): void
     {
         parent::setUp();
-        $this->artisan('migrate:refresh');
+        // $this->artisan('migrate:refresh');
         $this->artisan('db:seed', ['--class' => 'TestDataSeeder']);
     }
+
     /**
      * @test
      */
@@ -26,6 +27,7 @@ class ReportTest extends TestCase
         // 先に検証部分を記述
         $response->assertStatus(200);
     }
+
     /**
      * @test
      */
@@ -38,12 +40,49 @@ class ReportTest extends TestCase
     /**
      * @test
      */
+    public function api_customersにGETメソッドで取得できる顧客情報のJSON形式は要検通りである()
+    {
+        $response = $this->get('api/customers');
+        $customers = $response->json();
+        $customer = $customers[0];
+        $this->assertSame(['id', 'name'], array_keys($customer));
+    }
+
+    /**
+     * @test
+     */
+    public function api_customersにGETメソッドで返却される顧客情報は2件である()
+    {
+        $response = $this->get('api/customers');
+        $response->assertJsonCount(2);
+    }
+
+    /**
+     * @test
+     */
     public function api_customersにPOSTメソッドでアクセスできる()
     {
+        $customer = [
+            'name' => 'customer_name'
+        ];
+
         // 実行部分を書く
-        $response = $this->post('api/customers');
+        $response = $this->postJson('api/customers', $customer);
         // 先に検証部分を記述
         $response->assertStatus(200);
+    }
+
+    /**
+     * @test
+     */
+    public function api_customersに顧客名をPOSTするとcustomersテーブルにそのデータが追加される()
+    {
+        $params = [
+            'name' => '顧客名',
+        ];
+        $this->postJson('api/customers', $params);
+
+        $this->assertDatabaseHas('customers', $params);
     }
 
     /**

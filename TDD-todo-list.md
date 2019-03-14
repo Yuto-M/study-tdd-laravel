@@ -1,9 +1,12 @@
 # TODOリスト
 - ~~api/customersにGETメソッドでアクセスできる~~
-    - api/customersにGETメソッドでアクセスするとJSONが返却される
-    - api/customersにGETメソッドで取得できる顧客情報のJSON形式は要検通りである
-    - api/customersにGETメソッドで返却される顧客情報は2件である
+    - ~~api/customersにGETメソッドでアクセスするとJSONが返却される~~
+    - ~~api/customersにGETメソッドで取得できる顧客情報のJSON形式は要検通りである~~
+    - ~~api/customersにGETメソッドで返却される顧客情報は2件である~~
 - ~~api/customersにPOSTメソッドでアクセスできる~~
+    - ~~api/customersに顧客名をPOSTするとcustomersテーブルにそのデータが追加される~~
+    - api/customersにnameが含まれない場合は422Unprocessable entityが返却される
+    - api/customersのnameが空の場合は422Unprocessable entityが返却される
 - ~~api/customers/{customer_id}にGETメソッドでアクセスできる~~
 - ~~api/customers/{customer_id}にPUTメソッドでアクセスできる~~
 - ~~api/customers/{customer_id}にdeleteメソッドでアクセスできる~~
