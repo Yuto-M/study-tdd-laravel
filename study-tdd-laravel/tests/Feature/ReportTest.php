@@ -26,6 +26,14 @@ class ReportTest extends TestCase
         // 先に検証部分を記述
         $response->assertStatus(200);
     }
+    /**
+     * @test
+     */
+    public function api_customersにGETメソッドでアクセスするとJSONが返却される()
+    {
+        $response = $this->get('api/customers');
+        $response->assertJson([]);
+    }
 
     /**
      * @test
