@@ -20,3 +20,5 @@ https://github.com/orchestral/testbench/issues/238
     - setUpメソッドの戻り値にvoid型を指定してあげればテスト可能
 ## RefreshDatabaseの挙動について
 https://qiita.com/FrogWoman/items/6a143af0a042dc853e88
+
+## Laravelの機能がテストにカラム際に挙動が分からなければ一旦テストを実装してエラーメッセージから内容を把握するのもあり

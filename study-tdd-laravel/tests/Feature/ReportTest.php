@@ -192,4 +192,22 @@ class ReportTest extends TestCase
         // 先に検証部分を記述
         $response->assertStatus(200);
     }
+
+    /**
+     * @test
+     */
+    public function POST_api_customersのエラーレスポンスの確認()
+    {
+        $params = ['name' => ''];
+        $response = $this->postJson('api/customers', $params);
+        $error_response = [
+            'message' => 'The given data was invalid.',
+            'errors' => [
+                'name' => [
+                    'nameは必須項目です'
+                ],
+            ]
+        ];
+        $response->assertExactJson($error_response);
+    }
 }

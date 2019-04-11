@@ -15,7 +15,11 @@ class ApiController extends Controller
 
     public function postCustomer(Request $request)
     {
-        $this->validate($request, ['name' => 'required']);
+        $this->validate(
+            $request,
+            ['name' => 'required'],
+            ['name.required' => ':attributeは必須項目です']
+        );
         $customer = new \App\Customer();
         $customer->name = $request->json('name');
         $customer->save();
@@ -60,4 +64,6 @@ class ApiController extends Controller
     {
 
     }
+
+    
 }
