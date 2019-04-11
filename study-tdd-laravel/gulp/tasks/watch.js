@@ -6,7 +6,8 @@ class MyRegistry extends DefaultRegistry {
         gulp.task('watch:test', done => {
             gulp.watch([
                 'tests/**/*.php',
-                'routes/**/*.php'
+                'routes/**/*.php',
+                'app/Http/Controllers/**/*.php'
             ], { usePolling: true }, gulp.task(
                 'test'
             ));
